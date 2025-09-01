@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shooting Space</title>
+        <link rel="stylesheet" href="game.css">
+        <audio id="music" autoplay loop>
+            <source src="C:\Users\shrey\Desktop\Shreyansh\Nova Petrol\resources\Game_bgm.mp3" type='audio/mpeg'>
+        </audio>
+        <audio id="engine">
+            <source src="C:\Users\shrey\Desktop\Shreyansh\Nova Petrol\resources\spaceship.mp3" type='audio/mpeg'>
+        </audio>
+        <audio id="shotadi">
+            <source src="C:\Users\shrey\Desktop\Shreyansh\Nova Petrol\resources\enemyShot.mpeg" type='audio/mpeg'>
+        </audio>
+        <audio id="blast">
+            <source src="C:\Users\shrey\Desktop\Shreyansh\Nova Petrol\resources\blast.mp3" type='audio/mpeg'>
+        </audio>
+        <audio id="explosion">
+            <source src="C:\Users\shrey\Desktop\Shreyansh\Nova Petrol\resources\Explosion.mp3" type='audio/mpeg'>
+        </audio>
+        <audio id="no ammo">
+            <source src="C:\Users\shrey\Desktop\Shreyansh\Nova Petrol\resources\no ammo.mp3" type='audio/mpeg'>
+        </audio>
+        <audio id="lose">
+            <source src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/You%20Lose%20-%20Sound%20Effect.mp3" type='audio/mpeg'>
+        </audio>
+        <audio id="mulblast">
+            <source src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/Multiple%20explosion%20sound%20effect(MP3_160K).mp3" type='audio/mpeg'>
+        </audio>
+        <audio id="itemPickup">
+            <source src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/Item%20Pick-up.mp3" type='audio/mpeg'>
+        </audio>
+        <audio id="documentPickup">
+            <source src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/Page%20Flip%20sound%20effect.mp3" type='audio/mpeg'>
+        </audio>
+        <style>
+            body{
+                background-image: url("file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/blog-bg-2.png");
+                background-size: cover;
+                padding: 0px;
+                margin: 0px;
+                height:100vh;
+            }
+        </style>
+    </head>
+    <body id="screen">
+        <header align="right">
+            <img src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/PicsArt_07-30-09.14.44.png" alt="shottype" id="shot1img" height="60px">
+            <span height="60px" id="shot1amocnt"></span>
+            
+            <img src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/PicsArt_07-30-07.43.37.png" alt="shottype" id="shot2img" height="60px">
+            <span height="60px" id="shot2amocnt"></span>
+
+            <img src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/shoot%203.png" alt="shottype" id="shot3img" height="60px">
+            <span height="60px" id="shot3amocnt"></span>
+            
+            <span align="left" id='HPcon'>
+                <div id="HP"></div>
+            </span>
+            
+            <img src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/Music%20Icon.png" alt="audio switch" id="auds" height="50px">
+            <img src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/Sound%20Icon.png" alt="music switch" id="muss" height="50px">
+        </header>
+
+        <span id="helpcon"></span>
+
+        <span id="att"></span>
+        <span id="att2"></span>
+
+        <!--enemies images-->
+        <img alt="enemy" id="enemy" src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/enemy1.png" height="15%">
+        <img alt="enemy" id="enemy1" src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/enemy2.png" height="15%">
+        <img alt="enemy" id="enemy2" src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/enemy2.png" height="15%">
+        
+        <div id='enmyHPcon'>
+            <div id='enmy1HPdis'></div>
+        </div>
+        <div id="enmyHPcon2">
+            <div id="enmy2HPdis"></div>
+        </div>
+        <div id="enmyHPcon3">
+            <div id="enmy3HPdis"></div>
+        </div>
+
+        <div id="manual"></div>
+
+        <div align="center" class="shipc">
+            <img src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/mspace.png" alt="main space-ship" class="pship" id="pshipID">
+        </div>
+        <div id="pshipHPcon" align="left">
+            <div id="pshipHPdis"></div>
+        </div>
+        <img src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/spaceship.png" alt="space-ship" id="ship" height="12%">
+        <span id="commander">
+            <img src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/commander.png" height="400px" alt="commander">
+            <video id="myVideo" width="200" autoplay>
+                <source src="file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/dialogue.mp4" type="video/mp4">
+            </video>
+        </span>
+        <div id="tryAgain" onclick="location.reload()"></div>
+    </body>
+    <script src="game.js"></script>
+</html>

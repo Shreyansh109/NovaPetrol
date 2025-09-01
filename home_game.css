@@ -1,0 +1,171 @@
+.ship{
+    Animation-name:mship;
+    position:absolute;
+    animation-duration:290s;
+    animation-timing-function:ease-out;
+    animation-iteration-count:infinite;
+}
+@keyframes mship{
+    0%{left:1050px;top:593px;height:150px;width:150px;}
+    100%{left:0px;top:500px;height:10px;width:10px;}
+}
+
+.logo{
+    position:relative;
+    left: 5px;
+    top:5px;
+}
+
+.nam{
+    font-family:Consolas;
+    color: white;
+    font-size:x-large;
+    margin-left:5px;
+    position:relative;
+    bottom:5px;
+}
+
+#sto{
+    display: none;
+    position: absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(128, 128, 128, 0.632);
+}
+
+.set{
+    position: absolute;
+    top:12px;
+    right:10px;
+}
+
+.set:hover{
+    position: absolute;
+    top:10px;
+    right:8px;
+    height: 55px;
+}
+
+.ibutc{
+    height:100px;
+    padding-top: 22px;
+}
+
+#ibut:hover{
+    height:60px;
+    position: relative;
+    bottom:2px;
+    left:2px;
+}
+
+#i{
+    height: 100%;
+    width:100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.771);
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
+.nt{
+    height: 160px;
+    position: relative;
+    top:15%;
+}
+
+.st:hover{
+    height: 110px;
+}
+
+.mo:hover{
+    height: 70px;
+}
+
+.nt2{
+    height: 160px;
+    position: relative;
+    top:10%;
+}
+
+#moropt{
+    display:none;
+    padding-top: 1%;
+    height:140%;
+    width:25%;
+    background-image: url(https://art.pixilart.com/original/sr204222a23c5aws3.gif);
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.library{
+    margin-top: 3px;
+    background-color: rgb(109, 56, 223);
+    color:rgb(114, 255, 39);
+    border:none;
+    border-radius: 2px;
+}
+
+.library:hover{
+    background-color: greenyellow;
+    color: purple;
+}
+
+#can{
+    height:400px;
+    width:400px;
+    display: none;
+    border-radius: 10px;
+    background: url(file:///C:/Users/shrey/Desktop/Shreyansh/Nova%20Petrol/resources/d05eabb7a322c7b.gif) center center/cover no-repeat;
+    background-size:cover;
+}
+
+.tab{
+    width:90%;
+    position: relative;
+    top: 30%;
+    left: 8%;
+}
+
+#canb{
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+    right: 5px;
+}
+
+#canb:hover{
+    box-shadow:0 0 30px rgb(255, 255, 255);
+}
+
+#aud1{
+    border-radius: 50%;
+}
+
+#aud1:hover{
+    box-shadow:0 0 30px rgb(255, 255, 255);
+}
+
+#aud2{
+    border-radius: 50%;
+}
+
+#aud2:hover{
+    box-shadow:0 0 30px rgb(255, 255, 255);
+}
+
+#videocon{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#video{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
