@@ -1,0 +1,194 @@
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>set 1</title>
+		<style>
+			#img1{
+				position: absolute;
+			}
+			#img2{
+				position: absolute;
+			}
+			#img3{
+				position: absolute;
+			}
+			#shield{
+				opacity: 0.5;
+				position: absolute;
+				animation: rotate 2s linear infinite;
+			}
+			@keyframes rotate {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			#img4{
+				position: absolute;
+			}
+			#img5{
+				position: absolute;
+			}
+			#pshipID{
+				height:100px;
+				width: 650px;
+				position: absolute;
+				bottom: 0px;
+			}
+		</style>
+	</head>
+	<body id="body">
+
+		<span id="att"></span><!--container for enmey shot-->
+
+		<img src="file:///C:/Users/shrey/Desktop/Shreyansh/enemy1.png" width="3.5%" id="img1">
+		<img src="file:///C:/Users/shrey/Desktop/Shreyansh/enemy2.png" width="4%" id="img2">
+		<img src="file:///C:/Users/shrey/Desktop/Shreyansh/enemy3.png" width="8%" id="img3">
+		<img src="file:///C:/Users/shrey/Desktop/Shreyansh/solid_hexagonal_shield.png" width="8%" id="shield">
+		<img src="file:///C:/Users/shrey/Desktop/Shreyansh/enemy2.png" width="4%" id="img4">
+		<img src="file:///C:/Users/shrey/Desktop/Shreyansh/enemy1.png" width="3.5%" id="img5">
+		<img src="file:///C:/Users/shrey/Desktop/Shreyansh/mspace.png" id="pshipID">
+		<script>
+			let sw=document.getElementById("body").offsetWidth;
+			let sh=document.getElementById("body").offsetHeight;
+			let a=document.getElementById("img1");
+			let b=document.getElementById("img2");
+			let c=document.getElementById("img3");
+			let d=document.getElementById("img4");
+			let e=document.getElementById("img5");
+			a.style.left=`${sw/6-a.offsetWidth/2}px`;
+			b.style.left=`${sw/3-b.offsetWidth/2}px`;
+			document.getElementById("shield").style.left=`${sw/2-c.offsetWidth/2}px`;
+			c.style.left=`${sw/2-c.offsetWidth/2}px`;
+			d.style.left=`${2*sw/3-d.offsetWidth/2}px`;
+			e.style.left=`${5*sw/6-e.offsetWidth/2}px`;
+			document.getElementById("pshipID").style.left=`${sw/2-650/2}px`;//remove this line while coping the code
+			function lvl3enmy1(){
+				if (a.offsetTop<=3*sh/15){
+					a.style.top=`${a.offsetTop+1}px`;
+					setTimeout(lvl3enmy1, 10);
+				}
+				else{
+					let m=a.offsetTop;
+					let ang1=Math.atan(-1*(sh-document.getElementById("pshipID").offsetHeight - m+a.offsetHeight)/(document.getElementById("pshipID").offsetLeft+document.getElementById("pshipID").offsetWidth/2-a.offsetLeft+a.offsetWidth/2));//idal rotation of ship
+					ang1=ang1*(180/Math.PI);
+					let s1ang=0;//actual rotation of ship
+					function rot (){
+                        s1ang--;
+                        if(-1*(ang1+s1ang)<90){
+                            a.style.transform=`rotate(${s1ang}deg)`;
+							setTimeout(rot, 100);
+                        }
+					}
+					rot();
+				}
+			}
+			function lvl3enmy2(){
+				if (b.offsetTop<=sh/30){
+					b.style.top=`${b.offsetTop+1}px`;
+					setTimeout(lvl3enmy2, 10);
+				}
+				else{
+					let m=b.offsetTop;
+					let ang1=Math.atan(-1*(sh-document.getElementById("pshipID").offsetHeight - m+b.offsetHeight)/(document.getElementById("pshipID").offsetLeft+document.getElementById("pshipID").offsetWidth/2-b.offsetLeft+b.offsetWidth/2));//idal rotation of ship
+					ang1=ang1*(180/Math.PI);
+					let s1ang=0;//actual rotation of ship
+					function rot (){
+                        s1ang--;
+                        if(-1*(ang1+s1ang)<90){
+                            b.style.transform=`rotate(${s1ang}deg)`;
+							setTimeout(rot, 100);
+                        }
+					}
+					rot();
+				}
+			}
+			function lvl3enmy3shield(){
+				if (document.getElementById("shield").offsetTop<=2*sh/15){
+					document.getElementById("shield").style.top=`${document.getElementById("shield").offsetTop+1}px`;
+					setTimeout(lvl3enmy3shield, 10);
+				}
+			}
+			function lvl3enmy3(){
+				let stc=0;
+				if (c.offsetTop<=2*sh/15){
+					c.style.top=`${c.offsetTop+1}px`;
+					setTimeout(lvl3enmy3, 10);
+				}
+				else{
+					function enemy1sht(){
+						stc++;
+						let att=document.getElementById("att");
+						att.innerHTML=`<img src='file:///C:/Users/shrey/Desktop/Shreyansh/enemyshot3.png' width='1.5%' id=shot${stc} alt='shot' style='display:none; position: absolute'>`;
+						document.getElementById(`shot${stc}`).style.display="block";
+						let attsht=document.getElementById(`shot${stc}`);
+						attsht.style.top=`${c.offsetTop+c.offsetHeight/2}px`;
+						attsht.style.left=`${c.offsetLeft+c.offsetWidth/2-attsht.offsetWidth/2}px`;
+						console.log(attsht.offsetWidth);
+						function enemy1shtani(){
+							attsht.style.top=`${attsht.offsetTop+5}px`;
+							if(attsht.offsetTop+attsht.offsetHeight/1.2>=document.getElementById("pshipID").offsetTop){
+								attsht.remove();
+								enemy1sht();
+							}
+							else{
+								setTimeout(enemy1shtani,30);
+							}
+						}
+						enemy1shtani();
+					}
+					enemy1sht();
+				}
+			}
+			function lvl3enmy4(){
+				if (d.offsetTop<=sh/30){
+					d.style.top=`${d.offsetTop+1}px`;
+					setTimeout(lvl3enmy4, 10);
+				}
+				else{
+					let m=b.offsetTop;
+					let ang2=Math.atan(-1*(sh-document.getElementById("pshipID").offsetHeight - m+d.offsetHeight)/(document.getElementById("pshipID").offsetLeft+document.getElementById("pshipID").offsetWidth/2-d.offsetLeft+d.offsetWidth/2))
+					ang2=ang2*(180/Math.PI);
+					let s2ang=0;
+					function rot(){
+						s2ang++;
+						if(ang2+s2ang-5<90){
+							d.style.transform=`rotate(${s2ang}deg)`;
+							setTimeout(rot, 100);
+						}
+					}
+					rot();
+				}
+			}
+			function lvl3enmy5(){
+				if (e.offsetTop<=3*sh/15){
+					e.style.top=`${e.offsetTop+1}px`;
+					setTimeout(lvl3enmy5, 10);
+				}
+				else{
+					let m=b.offsetTop;
+					let ang2=Math.atan(-1*(sh-document.getElementById("pshipID").offsetHeight - m+a.offsetHeight)/(document.getElementById("pshipID").offsetLeft+document.getElementById("pshipID").offsetWidth/2-e.offsetLeft+d.offsetWidth/2))
+					ang2=ang2*(180/Math.PI);
+					let s2ang=0;
+					function rot(){
+						s2ang++;
+						if(ang2+s2ang-10<90){
+							e.style.transform=`rotate(${s2ang}deg)`;
+							setTimeout(rot, 100);
+						}
+					}
+					rot();
+				}
+			}
+			lvl3enmy1();
+			lvl3enmy2();
+			lvl3enmy3shield();
+			lvl3enmy3();
+			lvl3enmy4();
+			lvl3enmy5();
+		</script>
+	</body>
+</html>
